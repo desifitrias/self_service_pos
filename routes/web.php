@@ -13,14 +13,40 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+ 
+// Route::get('/about', function () {
+//     return 'Halaman About';
+// });
 
-Auth::routes();
+// Route::get('/about{search}', function () {
+//     $data = [
+//         'pageTitle' => 'Tentang Kami',
+//         'content' => 'Ini adalah halaman tentang kami.'
+//     ];
+//     return view('about', $data);
+// });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// route::get('/produk','App\Http\Controllers\ProdukController@index');
 
-Auth::routes();
+// route::get('/produk/tambah_produk','ProdukController@tambah');
+// route::post('/produk/simpan_produk','produkController@simpan');
+// route::get('/produk/ubah_produk/{id}','ProdukController@ubah');
+// route::post('/produk/update_produk/{id}','ProdukController@update');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// routes/web.php
+// use App\Http\Controllers\UserController;
+
+// Route::get('/user', [UserController::class, 'index'])->name('user.index');
+// Route::get('/user/tambah_user', [UserController::class, 'tambah'])->name('user.tambah');
+// Route::post('/user/simpan_user', [UserController::class, 'simpan'])->name('user.simpan');
+// Route::get('/user/ubah_user/{id}', [UserController::class, 'ubah'])->name('user.ubah');
+// Route::post('/user/update_user/{id}', [UserController::class, 'update'])->name('user.update');
+
+use App\Http\Controllers\UserController;
+
+Route::resource('user', UserController::class);
+
+
+
+
+
